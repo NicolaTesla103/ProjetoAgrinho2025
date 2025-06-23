@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Projeto Agrinho 2025">
+        <meta name="author" content="Nicolas Gomes">
+        <meta name="keywords" content="Campo+, Agrinho 2025, Agrinho, Agro, Agricultura">
+        <title>Campo+</title>
+        <link rel="stylesheet" href="style.css">
+
+        <style>
+            /* Conteúdo */
+            
+            main p { /* Ajustando os textos */
+                text-indent: 1.5cm;
+                line-height: 1cm;
+                text-align: justify;
+            }  
+
+            .fundo {
+                position: relative;
+                text-align: center;
+                color: white;
+            }
+
+            .fundo img {
+                width: clamp(20vh, 100%, 80vh);
+                border-radius: 10px;
+                clip-path: margin-box;
+            }
+            
+            .fundo h1 {
+                width: clamp(20vh, 100%, 80vh);
+                position: absolute;
+                color: white;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 100%;
+            }
+
+            .contraste .fundo img {
+                border: 5px solid aqua;
+            }
+
+            .contraste .fundo h1 {
+                background-color: aqua;
+                color: black;
+            }
+
+            .titulo {
+                width: 100%;
+            }
+
+            .div-titulo {
+                display: flex;
+                text-align: center;
+                align-items: center;
+            }
+            
+            .titulo { font-size: 2em; }
+            h2.titulo { font-size: 1em; }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav id="nav-bar" tabindex="0">
+                <h1 id="logo"><a class="nav-link" href="index.html">Campo<span>+</span></a></h1>
+                <ul id="nav-list">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galeria.html">Galeria</a></li>
+                </ul>
+                
+                <button id="area-b-mobile" aria-label="Botão de Navegação">
+                    <span id="b-mobile"></span>
+                </button>
+            </nav>
+        </header> 
+
+        <!-- Acessibilidade -->
+        <div id="acesso" tabindex="1">
+            <img id="acesso-hand" src="imagens/acesso-hand.svg" alt="">
+            <h1 id="texto-acesso">Acessibilidade</h1>
+            <button id="fechar-acesso" aria-label="Fechar menu acessibilidade">X</button>
+            <div id="funcoes">
+                <button id="aumentar-fonte" aria-label="Aumentar a fonte do site">A+</button>
+                <button id="diminuir-fonte" aria-label="Diminuir a fonte do site">A-</button>
+                <button id="alto-contraste" aria-label="Ativar modo alto contraste">Alto contraste</button>
+            </div>
+        </div>
+
+        <main tabindex="2">
+            <section id="intro">
+                <article>
+                    <div class="fundo">
+                        <img alt="Foto que mostra uma estrada reta onde há no lado esquerdo uma
+                         plantação de milho e no lado direito, uma plantação de sorgo" src="imagens/fundo.jpg">
+                        <h1 class="titulo">Conexão campo-cidade, <span>interface que promove a vida</span></h1>
+                    </div>
+                    <p>
+                        O campo e a cidade apresentam cenários distintos. 
+                        Enquanto no campo se ordenham vacas para obter o leite, 
+                        na cidade ele é encontrado em caixas, pronto para ser consumido. 
+                        No entanto, nessa explicação perde-se grande parte da essência da conexão entre o 
+                        campo e a cidade, que muitas vezes passa despercebida pela maioria das pessoas que 
+                        consomem carne, leite, verduras, entre outros alimentos.
+                    </p>
+                    <div class="div-titulo">
+                        <h2 class="titulo"> 
+                            Você já parou para pensar como diversos alimentos que você 
+                            consome saem do campo? E como eles chegam até a sua mesa?
+                        </h2>
+                    </div>
+                    <p>
+                        Por algumas décadas, o campo e a cidade caminharam em caminhos
+                        distantes. As pessoas que ali viviam conseguiam
+                        manter seus cotidianos de forma distintas e autônomas. 
+                        A vida no campo era caracterizada pela subsistência, 
+                        frequentemente associada à tranquilidade e, por vezes, 
+                        considerada retrógrada. Já as áreas urbanas eram marcadas 
+                        pelo progresso e pelo cotidiano agitado, especialmente após a 
+                        introdução das grandes indústrias. 
+                    </p>
+                    <p>
+                        Com o progresso da tecnologia e da comunicação esses cenários
+                        vêm se modificando, práticas urbanas chegaram ao campo,
+                        como uso da internet, de máquinas modernas, recursos que antes
+                        era restrito às cidades.
+                    </p>
+                    <p>
+                        Engana-se quem pensa que apenas os grandes produtores se 
+                        beneficiam dessas tecnologias. Os pequenos também podem 
+                        aproveitar melhor suas áreas, otimizando a produção e, 
+                        consequentemente, aumentando sua produtividade. 
+                        Com o auxílio da irrigação automatizada, da agricultura de precisão,
+                        do <i>marketing digital</i>, entre outras ferramentas, é possível 
+                        alcançar resultados mais eficientes e sustentáveis.  
+                    </p>
+                    <p>
+                        Muitas pessoas buscam conciliar a vida movimentada das
+                        grandes cidades com a qualidade de vida do campo, valorizando
+                        espaços verdes e procurando alimentos frescos e de qualidade
+                        em feiras locais. Como resultado, desenvolvem um estilo de
+                        vida mais sustentável e saudável.
+                    </p>
+
+                    <p>
+                        Os tempos atuais, juntamente com a globalização,
+                        têm promovido a homogeneização dos modos de vida.
+                        A cultura urbana penetra no cotidiano do campo, enquanto o
+                        estilo de vida rural vem ganhando cada vez mais espaço nas cidades.
+                    </p>
+                </article>
+            </section> 
+
+        </main>
+        
+        <script src="script.js"></script>
+    </body>
+</html>

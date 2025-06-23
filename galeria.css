@@ -1,0 +1,70 @@
+/* Reset */
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+:root {
+    --margin: clamp(2vw, 5vw, 8vw);
+}
+
+#galeria {
+    margin-inline: 0px;
+    padding: 0px;
+}
+
+.conteudo 
+{
+    background-color: antiquewhite;
+    border: 5px dotted burlywood;
+    margin: var(--margin);
+    padding: 8px;
+    border-radius: 8px;
+    padding-inline: var(--margin);
+}
+
+.conteudo h1 {
+    text-align: center;
+}
+
+.conteudo p {
+    text-indent: 1.5cm;
+    line-height: 1cm;
+    text-align: justify;
+}
+
+p ul {
+    text-align: left;
+}
+
+.fotos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.foto {
+    overflow: hidden;
+    margin: 20px;
+    width: clamp(300px, 30vw, 40vh);
+    border: 5px double darkgoldenrod;
+}
+
+.foto:hover {
+    transform: rotate(2deg);
+}
+
+/* Contraste */
+
+.contraste .conteudo {
+    border: 5px inset aqua;
+    background-color: black;
+}
+
+.contraste .foto {
+    border: 5px inset aqua;
+}
+
+.contraste main {
+    margin: var(--margin);
+}

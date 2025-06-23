@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Projeto Agrinho 2025">
+        <meta name="author" content="Nicolas Gomes">
+        <meta name="keywords" content="Campo+, Agrinho 2025, Agrinho, Agro, Agricultura">
+        <title>Campo+ - Galeria</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="galeria.css">
+    </head>
+    <body>
+        <header>
+            <nav id="nav-bar" tabindex="0">
+                <h1 id="logo"><a class="nav-link" href="index.html">Campo<span>+</span></a></h1>
+                <ul id="nav-list">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galeria.html">Galeria</a></li>
+                </ul>
+                
+                <button id="area-b-mobile" aria-label="Botão de Navegação">
+                    <span id="b-mobile"></span>
+                </button>
+            </nav>
+        </header> 
+
+        <!-- Acessibilidade -->
+        <div id="acesso" tabindex="1">
+            <img id="acesso-hand" src="imagens/acesso-hand.svg" alt="">
+            <h1 id="texto-acesso">Acessibilidade</h1>
+            <button id="fechar-acesso" aria-label="Fechar menu acessibilidade">X</button>
+            <div id="funcoes">
+                <button id="aumentar-fonte" aria-label="Aumentar a fonte do site">A+</button>
+                <button id="diminuir-fonte" aria-label="Diminuir a fonte do site">A-</button>
+                <button id="alto-contraste" aria-label="Ativar modo alto contraste">Alto contraste</button>
+            </div>
+        </div>
+
+        <main id="galeria" tabindex="2">
+            <div class="conteudo">
+                <h1>Trigo</h1>
+                <div class="fotos">
+                    <img class="foto" alt="Foto de um campo onde contém milho plantado. Ao fundo é possivel notar um pasto logo após uma rua." src="imagens/trigo.jpg">
+                    <img class="foto" alt="Foto de uma plantação de trigo ainda verde se estendendo ao fundo com sua cor verde" src="imagens/trigo2.jpg">
+                </div>
+                <article>
+                    <p>
+                        O trigo geralmente é plantado no outono ou no começo do inverno. Para o seu crescimento, o trigo precisa estar em um solo bem drenado,
+                        ter uma boa incidência solar, e cuidado em relação as pragas, como as joaninhas.
+                        Quando ele está seco e de cor dourada, ele tende ser colhido com máquinas.
+                        Essas máquinas, as colheitadeiras, separam o grão da palha.
+                    </p>
+                    <p>
+                        Depois que os grão dos trigos são colhidos, 
+                        eles são colocados em caminhões e levados até os moinhos.
+                        No moinho, o trigo vira farinha refinada e farinha integral.
+                        A farinha é embalada e distribuída para padarias fazerem: pães, bolos, etc.
+                        E para indústrias fazerem bolacha, macarrão, entre outras coisas.
+                        E por fim, isso acaba no seu café da manhã, um <i>pãozinho</i> com café.
+                    </p>
+                </article>
+            </div>
+            
+            <div class="conteudo">
+                <h1>Café</h1>
+                <div class="fotos">
+                    <img class="foto" alt="Foto de um cafeeiro, pequenas frutinhas de verde até roxa coloração." src="imagens/cafe.jpg">
+                    <img class="foto" alt="Foto de um cafeeiro de café catuai, uma variante do café de coloração amarelada." src="imagens/cafe-catuai.jpg">
+                </div>
+                <article>
+                    <p>É isso aí! Esse é o delicioso 
+                        café que tomamos toda
+                        manhã. Depois de torrado, é claro.
+                    </p>
+                    <p>
+                        Sabia que o Brasil é o maior produtor de café e o segundo que mais consome ele?
+                    </p>
+                </article>
+            </div>
+            
+            <div class="conteudo">
+                <h1>Milho</h1>
+                <div class="fotos">
+                    <img class="foto" alt="Foto onde há um caminho de terra em que no lado direito e no esquerdo está plantando bastante milho." src="imagens/milho.jpg">
+                    <img class="foto" alt="Foto tirada ao lado de uma rua adjacente à uma plantação de milho" src="imagens/milho2.jpg">
+                </div>
+                <article>
+                    <p>
+                        O milho cresce de 90 a 120 dias, durante esse tempo se 
+                        usa o adubo, protege ele pragas como pulgões e usando a
+                        água da chuva como irrigação. 
+                    </p>
+                    <p>
+                        Está na hora da colheita quando o pé seca e a espiga está dura. 
+                        Depois que o milho for colhido, ele vai para os armazéns ser secado e limpo. 
+                        Logo após isso, ele pode ser classificado para consumo humano (se estiver em bom estado) ou ração animal.
+                    </p>
+                    <p>
+                        O milho processado pode ser:
+                        <ul>
+                            <li>Fubá</li>
+                            <li>Maisena</li>
+                            <li>Etanol</li>
+                            <li>Óleo de milho</li>
+                            <li>Ração para gado</li>
+                        </ul>
+                    </p>
+                </article>
+            </div>
+                
+            <div class="conteudo">
+                <h1>Feira do Produtor!</h1>
+                <div class="fotos">
+                    <img class="foto" alt="Foto tirada da feira do produtor em Jandaia. Apresenta frutas, legumes, verduras à exposição das pessoas." src="imagens/feiradoprodutor.jpg">
+                    <img class="foto" alt="Foto de alfaces à exposição, também tirada da feira do produtor." src="imagens/feiradoprodutor2.jpg">
+
+                </div>
+                <article>
+                    <p>
+                        Foto da Feita do Produtor, localizada em Jandaia do Sul, Paraná. Bananas, repolhos, entre outras coisas gostosas.
+                    </p>
+                </article>
+            </div>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>

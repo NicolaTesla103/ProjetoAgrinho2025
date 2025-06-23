@@ -1,0 +1,365 @@
+/* Reset */
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Variáveis */
+
+:root {
+    --margin: clamp(2vw, 5vw, 8vw);
+    --border-radius: 5px;
+    --font-nav: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-main: Arial, Helvetica, sans-serif;
+
+    --color-pri: green;
+    --color-sec: #060;
+    
+    --text-color: black;
+    --text-color-main: black;
+
+    --nav-color: white;
+    --background: white;
+
+    --nav-bar-h: 80px;
+}
+
+body {
+    background-color: var(--background);
+    overflow-x: hidden; /* esconder o navbar do menu mobile quando não ativo */
+}
+
+/* Logo */
+
+#logo {
+    margin-left: var(--margin);
+    transition: linear 0.2s;
+}
+
+#logo span { color: var(--color-pri); } /* sinal '+' com cor diferente... */
+
+/* Nav-Bar */
+
+#nav-bar {
+    display: flex;
+    font-family: var(--font-nav);
+    
+    align-items: center;
+    position: fixed;
+    height: var(--nav-bar-h);
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+#nav-list { 
+    display: flex; 
+    list-style: none;
+    margin-left: auto;
+    gap: 8px;
+    margin-right: var(--margin);
+}
+
+.nav-item::after {
+    display: block;
+    background-color: black;
+    transition: 0.2s linear;
+    content: "";
+
+    width: 0;
+    height: 3px;
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+.nav-item {
+    padding: 10px;
+}
+
+.nav-link, #logo a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding-block: 10px;
+}
+
+
+main {
+    background-color: white;
+    color: var(--text-color-main);
+    border-radius: var(--border-radius);
+    font-family: var(--font-main);
+
+    padding: 1rem;
+    margin: var(--margin);
+    margin-top: var(--nav-bar-h);
+}
+
+/* Acessibilidade */
+
+#area-b-mobile { display: none }
+
+#b-mobile { /* Botão mobile */
+    display: none;
+    margin-left: auto;
+    border: none;
+    background: none;
+}
+
+#acesso { /* Menu do acessibilidade */
+    font-family: var(--font-nav);
+    box-shadow: 0px 0px 5px 0px black;
+    background-color: white;
+    border-radius: 5px 0 0 5px;
+
+    position: fixed;
+    margin-top: 40px;
+    right: 0px;
+
+    width: 1em;
+    padding: 5px;
+    transition: cubic-bezier(0.1, 0.2, 0.3, 1.4) 0.2s;
+
+    z-index: 1000;
+}
+
+#acesso.ativo {
+    border-radius: var(--border-radius);
+    width: 200px;
+}
+
+#acesso:hover { 
+    opacity: 100%;
+}
+
+#fechar-acesso { /* Acesso ' [x] ' */
+    display: none;
+}
+
+#texto-acesso { /* Texto "Acessibilidade" */
+    display: none;
+    font-size: 20px;
+}
+
+#acesso.ativo #fechar-acesso {
+    display: block;
+    position: absolute;
+    background-color: transparent;
+    color: var(--text-color-nav);
+    border: 1px inset black;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--border-radius);
+    right: 5px;
+    top: 5px;
+}
+
+#funcoes {
+    display: none;
+    margin-top: 8px;
+}
+
+#acesso.ativo #funcoes { display: block; } /* Quando o menu abrir mostrar funções 'acesso'... */
+
+#acesso-hand { 
+    display: flex;
+    transform-origin: bottom; /* ponto de origem da rotação no "pé" da mão */
+    animation-duration: 0.8s;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+    width: 1em;
+    padding: 2px;
+}
+
+@keyframes acenar {
+    0% {
+        transform: rotate(0deg);
+    }
+    
+    20% {
+        transform: rotate(-15deg);
+    }
+
+    40% {
+        transform: rotate(15deg);
+    }
+
+    60% {
+        transform: rotate(-15deg);
+    }
+
+    80% {
+        transform: rotate(15deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+#acesso-hand:hover {
+    animation-name: acenar;
+}
+
+#funcoes button {
+    width: 100%;
+    height: 2rem;
+    border-radius: var(--border-radius);
+    border: 1px inset black;
+}
+
+#funcoes button:hover { opacity: 70%; }
+
+/* para pessoas que tem disturbio visual. O navegador irá respeitar as 
+configurações de animação do celular ou pc */
+@media (prefers-reduced-motion: reduce) {
+    * { 
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Alto Contraste */
+
+/* Todo o contraste foi testado para o 
+    melhor para as 
+    pessoas com problemas de visão utilizando o: 
+    webaim.org -> contrastchecker
+*/
+
+.contraste {
+    --background: black;
+    --nav-color: yellow;
+    --color-sec: aqua;
+    --color-pri: white;
+    --text-color: black;
+    --text-color-main: white;
+}
+
+.contraste #nav-bar {
+    background-color: var(--nav-color);
+}
+
+.navbar-opaca #nav-bar {
+    background-color: var(--nav-color);
+    --text-color: black;
+}
+
+.contraste #acesso {
+    background-color: yellow;
+    color: black;
+    opacity: 100%;
+}
+
+.contraste #logo span { color: black; }
+
+.contraste #funcoes button { background-color: transparent; }
+
+.contraste main {
+    background-color: transparent;
+    border: inset aqua;
+}
+
+/* Rodapé */
+
+footer {
+    display: flex;
+    background-color: whitesmoke;
+    font-size: 5px;
+    height: 60px;
+}
+
+/* Ajustes de tela */
+@media (max-width: 750px) {
+    /* botão mobile */
+
+    #area-b-mobile {
+        background-color: transparent;
+        border: none;
+        
+        display: block;
+        padding-block: 10px;
+
+        margin-left: auto;
+        margin-right: var(--margin);
+    }
+    
+    #b-mobile { 
+        display: block;
+        border-top: 3px solid black; /* primeira linha */
+    }
+
+    #b-mobile:hover {
+        cursor: pointer;
+    }
+
+    #b-mobile::before, /* segunda e terceira linha do menu mobile */
+    #b-mobile::after {
+        display: block;
+        content: "";
+        background-color: black;
+        width: 32px;
+        height: 3px;
+        margin-top: 6px;
+        transition: linear 0.2s;
+    }
+
+    .b-mobile-ativo #b-mobile { 
+        transform: rotate(45deg);
+        transform-origin: center;
+    }
+    
+    .b-mobile-ativo #b-mobile::before {
+        opacity: 0;
+    }
+
+    .b-mobile-ativo #b-mobile::after {
+        margin-top: -12px;
+        transform: rotate(90deg);
+        transform-origin: center;
+    }
+
+
+    /* nav-list */
+
+    #nav-list {
+        display: block;
+        background-color: var(--background);
+        transition: linear 0.2s;
+        
+        transform: translateX(100%);
+        position: absolute;
+        top: var(--nav-bar-h);
+        width: 100vw;
+        height: calc(100vh - var(--nav-bar-h));
+    }
+    
+    .b-mobile-ativo #nav-list {
+        transform: translateX(0);
+    }
+
+    .nav-item::after {
+        display: none;
+    }
+    
+    .nav-item {
+        display: flex;
+        margin: 2rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        padding: 0px;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding-block: 20px;
+        color: var(--text-color-main);
+    }
+
+    .nav-item .nav-link:hover {
+        text-decoration: underline;
+    }
+
+    .contraste .nav-item {
+        border-bottom: 1px solid white;
+    }
+}
